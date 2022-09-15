@@ -19,3 +19,4 @@ spec:
       securityContext:
         ####### Deny admission if nonroot is not set to true
         runAsNonRoot: true
+        runAsUser: 1000
