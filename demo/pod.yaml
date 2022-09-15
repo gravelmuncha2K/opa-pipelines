@@ -16,8 +16,8 @@ spec:
         requests:
           cpu: "300m"
           memory: "400Mi"
-  securityContext:
-    ####### Deny admission if privileed is set to true
-    privileged: false
-    ####### Deny admission if nonroot is not set to true
-    runAsNonRoot: true
+      securityContext:
+        ####### Deny admission if privileed is set to true
+        privileged: false
+        ####### Deny admission if nonroot is not set to true
+        runAsNonRoot: true

@@ -31,5 +31,5 @@ violation[msg] {
 }
 
 pod_runasnonroot {
-	pods.pod.spec.securityContext.runAsNonRoot
+	pods.pod.spec.containers[_].securityContext.runAsNonRoot
 }
