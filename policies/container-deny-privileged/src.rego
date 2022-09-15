@@ -1,17 +1,29 @@
-# @title Containers must not run as privileged
-#
-# Privileged containers can easily escalate to root privileges on the node. As
-# such containers running as privileged or with sufficient capabilities granted
-# to obtain the same effect are not allowed.
-#
-# @kinds apps/DaemonSet apps/Deployment apps/StatefulSet core/Pod
+# METADATA
+# title: Containers must not run as privileged
+# description: |-
+#   Privileged containers can easily escalate to root privileges on the node. As
+#   such containers running as privileged or with sufficient capabilities granted
+#   to obtain the same effect are not allowed.
+# custom:
+#   matchers:
+#     kinds:
+#     - apiGroups:
+#       - ""
+#       kinds:
+#       - Pod
+#     - apiGroups:
+#       - apps
+#       kinds:
+#       - DaemonSet
+#       - Deployment
+#       - StatefulSet
 package container_deny_privileged
 
 import data.lib.core
 import data.lib.pods
 import data.lib.security
 
-policyID := "P1003"
+policyID := "P1002"
 
 violation[msg] {
     pods.containers[container]
