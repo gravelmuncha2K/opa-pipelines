@@ -103,7 +103,7 @@ spec:
       }
 
       pod_runasnonroot {
-        pods.pod.spec.securityContext.runAsNonRoot
+        pods.pod.spec.containers[_].securityContext.runAsNonRoot
       }
     target: admission.k8s.gatekeeper.sh
 status: {}
