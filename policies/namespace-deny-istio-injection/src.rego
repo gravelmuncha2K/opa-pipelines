@@ -8,7 +8,6 @@
 #       - ""
 #       kinds:
 #       - Namespace
-
 package namespaceDenyIstioInjection
 
 import data.lib.core

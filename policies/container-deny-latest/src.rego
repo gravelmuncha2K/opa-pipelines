@@ -16,6 +16,7 @@
 #       - DaemonSet
 #       - Deployment
 #       - StatefulSet
+
 package  containerDenyLatest
 
 import data.lib.core
