@@ -34,6 +34,6 @@ spec:
           ports:
             - containerPort: 8080
       securityContext:
-        # ####### Deny admission if nonroot is not set to true
+        ####### Deny admission if nonroot is not set to true
         runAsNonRoot: true
         runAsUser: 1000
