@@ -22,18 +22,18 @@ spec:
       containers:
         - name: hello-kubernetes
           ######### Deny Admission if image uses latest tag ################
-          image: jenkins/jenkins:latest
+          image: jenkins/jenkins:2.249.1
           ####### Deny admission if resources are not set
-          resources: {}
-            # limits:
-            #   cpu: "300m"
-            #   memory: "400Mi"
-            # requests:
-            #   cpu: "300m"
-            #   memory: "400Mi"
+          resources:
+            limits:
+              cpu: "300m"
+              memory: "400Mi"
+            requests:
+              cpu: "300m"
+              memory: "400Mi"
           ports:
             - containerPort: 8080
       securityContext:
         # ####### Deny admission if nonroot is not set to true
-        # runAsNonRoot: true
+        runAsNonRoot: true
         runAsUser: 1000
