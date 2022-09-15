@@ -98,11 +98,16 @@ spec:
       violation[msg] {
         pods.pod
         not pod_runasnonroot
+        not container_runasnonroot
 
         msg := core.format_with_id(sprintf("%s/%s: Pod allows running as root", [core.kind, core.name]), policyID)
       }
 
       pod_runasnonroot {
+        pods.pod.spec.securityContext.runAsNonRoot
+      }
+
+      container_runasnonroot {
         pods.pod.spec.containers[_].securityContext.runAsNonRoot
       }
     target: admission.k8s.gatekeeper.sh
