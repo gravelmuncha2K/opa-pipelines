@@ -13,7 +13,7 @@ spec:
   source:
     path: gatekeeper/constraints
     repoURL: https://github.com/gravelmuncha2K/opa-pipelines
-    targetRevision: HEAD
+    targetRevision: master
   syncPolicy:
     automated:
       prune: true
